@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BUSPs.Classes
+namespace BUSPs.Databases
 {
     internal class DatabaseHelper
     {
