@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnManageSocieties = new System.Windows.Forms.Button();
-            this.btnScheduleElection = new System.Windows.Forms.Button();
             this.btnViewElections = new System.Windows.Forms.Button();
+            this.btnScheduleElection = new System.Windows.Forms.Button();
+            this.btnManageSocieties = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -49,17 +49,16 @@
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // btnManageSocieties
+            // btnViewElections
             // 
-            this.btnManageSocieties.AccessibleName = "";
-            this.btnManageSocieties.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnManageSocieties.Location = new System.Drawing.Point(0, 0);
-            this.btnManageSocieties.Name = "btnManageSocieties";
-            this.btnManageSocieties.Size = new System.Drawing.Size(110, 57);
-            this.btnManageSocieties.TabIndex = 0;
-            this.btnManageSocieties.Text = "Manage Societies";
-            this.btnManageSocieties.UseVisualStyleBackColor = true;
-            this.btnManageSocieties.Click += new System.EventHandler(this.btnManageSocieties_Click);
+            this.btnViewElections.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnViewElections.Location = new System.Drawing.Point(0, 117);
+            this.btnViewElections.Name = "btnViewElections";
+            this.btnViewElections.Size = new System.Drawing.Size(110, 68);
+            this.btnViewElections.TabIndex = 2;
+            this.btnViewElections.Text = "View Elections";
+            this.btnViewElections.UseVisualStyleBackColor = true;
+            this.btnViewElections.Click += new System.EventHandler(this.btnViewElections_Click);
             // 
             // btnScheduleElection
             // 
@@ -72,36 +71,37 @@
             this.btnScheduleElection.UseVisualStyleBackColor = true;
             this.btnScheduleElection.Click += new System.EventHandler(this.btnScheduleElection_Click);
             // 
-            // btnViewElections
+            // btnManageSocieties
             // 
-            this.btnViewElections.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnViewElections.Location = new System.Drawing.Point(0, 117);
-            this.btnViewElections.Name = "btnViewElections";
-            this.btnViewElections.Size = new System.Drawing.Size(110, 68);
-            this.btnViewElections.TabIndex = 2;
-            this.btnViewElections.Text = "View Elections";
-            this.btnViewElections.UseVisualStyleBackColor = true;
-            this.btnViewElections.Click += new System.EventHandler(this.btnViewElections_Click);
+            this.btnManageSocieties.AccessibleName = "";
+            this.btnManageSocieties.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnManageSocieties.Location = new System.Drawing.Point(0, 0);
+            this.btnManageSocieties.Name = "btnManageSocieties";
+            this.btnManageSocieties.Size = new System.Drawing.Size(110, 57);
+            this.btnManageSocieties.TabIndex = 0;
+            this.btnManageSocieties.Text = "Manage Societies";
+            this.btnManageSocieties.UseVisualStyleBackColor = true;
+            this.btnManageSocieties.Click += new System.EventHandler(this.btnManageSocieties_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(222, 0);
+            this.label1.Location = new System.Drawing.Point(159, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 22);
+            this.label1.Size = new System.Drawing.Size(295, 42);
             this.label1.TabIndex = 3;
             this.label1.Text = "Welcome Admin!";
             // 
             // AdminDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(20F, 42F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 461);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "AdminDashboard";
             this.ShowInTaskbar = false;
             this.Text = "AdminDashboard";
