@@ -71,6 +71,12 @@
     <Compile Include="Forms\Schedule Election.Designer.cs">
       <DependentUpon>Schedule Election.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SocietyManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SocietyManagementForm.Designer.cs">
+      <DependentUpon>SocietyManagementForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\AdminDashboard.resx">
@@ -81,6 +87,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Schedule Election.resx">
       <DependentUpon>Schedule Election.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SocietyManagementForm.resx">
+      <DependentUpon>SocietyManagementForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
