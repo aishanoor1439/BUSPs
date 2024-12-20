@@ -1,0 +1,9 @@
+C:\Users\FC Technologies\source\repos\BUSPs\BUSPs\obj\Debug\BUSPs.csproj.AssemblyReference.cache
+C:\Users\FC Technologies\source\repos\BUSPs\BUSPs\obj\Debug\BUSPs.Forms.AdminDashboard.resources
+C:\Users\FC Technologies\source\repos\BUSPs\BUSPs\obj\Debug\BUSPs.Forms.ElectionResultsForm.resources
+C:\Users\FC Technologies\source\repos\BUSPs\BUSPs\obj\Debug\BUSPs.Forms.LoginForm.resources
+C:\Users\FC Technologies\source\repos\BUSPs\BUSPs\obj\Debug\BUSPs.Forms.ElectionSchedulingForm.resources
+C:\Users\FC Technologies\source\repos\BUSPs\BUSPs\obj\Debug\BUSPs.Forms.SocietyManagementForm.resources
+C:\Users\FC Technologies\source\repos\BUSPs\BUSPs\obj\Debug\BUSPs.Properties.Resources.resources
+C:\Users\FC Technologies\source\repos\BUSPs\BUSPs\obj\Debug\BUSPs.csproj.GenerateResource.cache
+C:\Users\FC Technologies\source\repos\BUSPs\BUSPs\obj\Debug\BUSPs.csproj.CoreCompileInputs.cache
