@@ -25,7 +25,7 @@ namespace BUSPs.Forms
                 {
                     connection.Open(); 
 
-                    string query = $"SELECT role FROM users WHERE username = '{username}' AND password = '{password}'";
+                    string query = $"SELECT Role FROM user WHERE Name = '{username}' AND Password = '{password}'";
 
                     using (SqlCommand cmd = new SqlCommand(query, connection))
                     {
