@@ -1,18 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\FC Technologies\\source\\repos\\BUSPs\\BUSPs\\",
+  "WorkspaceRootPath": "C:\\Users\\ABC\\source\\repos\\BUSPs\\BUSPs\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{830FCD8E-D5EF-49F5-A145-A07822FF7AF2}|BUSPs.csproj|c:\\users\\fc technologies\\source\\repos\\busps\\busps\\forms\\userdashboardform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{830FCD8E-D5EF-49F5-A145-A07822FF7AF2}|BUSPs.csproj|solutionrelative:forms\\userdashboardform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{830FCD8E-D5EF-49F5-A145-A07822FF7AF2}|BUSPs.csproj|c:\\users\\abc\\source\\repos\\busps\\busps\\forms\\schedule election.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{830FCD8E-D5EF-49F5-A145-A07822FF7AF2}|BUSPs.csproj|solutionrelative:forms\\schedule election.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{830FCD8E-D5EF-49F5-A145-A07822FF7AF2}|BUSPs.csproj|c:\\users\\fc technologies\\source\\repos\\busps\\busps\\forms\\userdashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{830FCD8E-D5EF-49F5-A145-A07822FF7AF2}|BUSPs.csproj|solutionrelative:forms\\userdashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{830FCD8E-D5EF-49F5-A145-A07822FF7AF2}|BUSPs.csproj|c:\\users\\abc\\source\\repos\\busps\\busps\\forms\\societymanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{830FCD8E-D5EF-49F5-A145-A07822FF7AF2}|BUSPs.csproj|solutionrelative:forms\\societymanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{830FCD8E-D5EF-49F5-A145-A07822FF7AF2}|BUSPs.csproj|c:\\users\\fc technologies\\source\\repos\\busps\\busps\\forms\\userdashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{830FCD8E-D5EF-49F5-A145-A07822FF7AF2}|BUSPs.csproj|solutionrelative:forms\\userdashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{830FCD8E-D5EF-49F5-A145-A07822FF7AF2}|BUSPs.csproj|c:\\users\\abc\\source\\repos\\busps\\busps\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{830FCD8E-D5EF-49F5-A145-A07822FF7AF2}|BUSPs.csproj|solutionrelative:forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{830FCD8E-D5EF-49F5-A145-A07822FF7AF2}|BUSPs.csproj|c:\\users\\abc\\source\\repos\\busps\\busps\\forms\\admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{830FCD8E-D5EF-49F5-A145-A07822FF7AF2}|BUSPs.csproj|solutionrelative:forms\\admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,40 +34,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UserDashboardForm.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\FC Technologies\\source\\repos\\BUSPs\\BUSPs\\Forms\\UserDashboardForm.cs",
-              "RelativeDocumentMoniker": "Forms\\UserDashboardForm.cs",
-              "ToolTip": "C:\\Users\\FC Technologies\\source\\repos\\BUSPs\\BUSPs\\Forms\\UserDashboardForm.cs [Design]",
-              "RelativeToolTip": "Forms\\UserDashboardForm.cs [Design]",
+              "DocumentIndex": 0,
+              "Title": "Schedule Election.cs",
+              "DocumentMoniker": "C:\\Users\\ABC\\source\\repos\\BUSPs\\BUSPs\\Forms\\Schedule Election.cs",
+              "RelativeDocumentMoniker": "Forms\\Schedule Election.cs",
+              "ToolTip": "C:\\Users\\ABC\\source\\repos\\BUSPs\\BUSPs\\Forms\\Schedule Election.cs",
+              "RelativeToolTip": "Forms\\Schedule Election.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFEAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-21T02:24:38.615Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-12-20T10:53:15.474Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UserDashboardForm.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\FC Technologies\\source\\repos\\BUSPs\\BUSPs\\Forms\\UserDashboardForm.Designer.cs",
-              "RelativeDocumentMoniker": "Forms\\UserDashboardForm.Designer.cs",
-              "ToolTip": "C:\\Users\\FC Technologies\\source\\repos\\BUSPs\\BUSPs\\Forms\\UserDashboardForm.Designer.cs",
-              "RelativeToolTip": "Forms\\UserDashboardForm.Designer.cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAAAFMAAAAYAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "SocietyManagementForm.cs",
+              "DocumentMoniker": "C:\\Users\\ABC\\source\\repos\\BUSPs\\BUSPs\\Forms\\SocietyManagementForm.cs",
+              "RelativeDocumentMoniker": "Forms\\SocietyManagementForm.cs",
+              "ToolTip": "C:\\Users\\ABC\\source\\repos\\BUSPs\\BUSPs\\Forms\\SocietyManagementForm.cs",
+              "RelativeToolTip": "Forms\\SocietyManagementForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-21T02:16:20.312Z",
+              "WhenOpened": "2024-12-20T09:17:38.719Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AdminDashboard.cs",
+              "DocumentMoniker": "C:\\Users\\ABC\\source\\repos\\BUSPs\\BUSPs\\Forms\\AdminDashboard.cs",
+              "RelativeDocumentMoniker": "Forms\\AdminDashboard.cs",
+              "ToolTip": "C:\\Users\\ABC\\source\\repos\\BUSPs\\BUSPs\\Forms\\AdminDashboard.cs",
+              "RelativeToolTip": "Forms\\AdminDashboard.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T09:16:22.693Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "UserDashboardForm.cs",
-              "DocumentMoniker": "C:\\Users\\FC Technologies\\source\\repos\\BUSPs\\BUSPs\\Forms\\UserDashboardForm.cs",
-              "RelativeDocumentMoniker": "Forms\\UserDashboardForm.cs",
-              "ToolTip": "C:\\Users\\FC Technologies\\source\\repos\\BUSPs\\BUSPs\\Forms\\UserDashboardForm.cs",
-              "RelativeToolTip": "Forms\\UserDashboardForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFEAAAABAAAAAAAAAA==",
+              "Title": "LoginForm.cs",
+              "DocumentMoniker": "C:\\Users\\ABC\\source\\repos\\BUSPs\\BUSPs\\Forms\\LoginForm.cs",
+              "RelativeDocumentMoniker": "Forms\\LoginForm.cs",
+              "ToolTip": "C:\\Users\\ABC\\source\\repos\\BUSPs\\BUSPs\\Forms\\LoginForm.cs",
+              "RelativeToolTip": "Forms\\LoginForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAABaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T09:38:58.965Z",
+              "WhenOpened": "2024-12-20T08:57:28.889Z",
               "EditorCaption": ""
             }
           ]

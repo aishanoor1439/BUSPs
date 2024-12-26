@@ -19,8 +19,7 @@ namespace BUSPs.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            string electionName = textBox1.Text; 
+            string electionName = textBox1.Text;
             DateTime startDate = dateTimePicker1.Value;
             DateTime endDate = dateTimePicker2.Value;
 
@@ -42,7 +41,7 @@ namespace BUSPs.Forms
                 using (SqlConnection connection = dbHelper.GetConnection())
                 {
                     connection.Open();
-                    string query = "INSERT INTO elections (election_name, start_date, end_date) VALUES (@name, @startDate, @endDate)";
+                    string query = "INSERT INTO election (Name, StartDate, EndDate) VALUES (@name, @startDate, @endDate)";
                     using (SqlCommand cmd = new SqlCommand(query, connection))
                     {
                         cmd.Parameters.AddWithValue("@name", electionName);
@@ -73,14 +72,14 @@ namespace BUSPs.Forms
                 using (SqlConnection connection = dbHelper.GetConnection())
                 {
                     connection.Open();
-                    string query = "SELECT election_name AS 'Election Name', description AS 'Description', start_date AS 'Start Date', end_date AS 'End Date' FROM elections";
+                    string query = "SELECT ID AS 'ID', Name AS 'Name', StartDate AS 'Start Date', EndDate AS 'End Date' FROM election";
                     using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection))
                     {
                         DataTable dt = new DataTable();
                         adapter.Fill(dt);
 
                         // Bind data to DataGridView
-                        //dataGridView1.DataSource = dt;
+                        dataGridView1.DataSource = dt;
                     }
                 }
             }
