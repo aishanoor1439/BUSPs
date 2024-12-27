@@ -31,11 +31,5 @@ namespace BUSPs.Forms
             this.Hide();
         }
 
-        private void btn3_Click(object sender, EventArgs e)
-        {
-            ViewElectionsForm viewElectionsForm = new ViewElectionsForm();
-            viewElectionsForm.Show();
-            this.Hide();
-        }
     }
 }

@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using BUSPs.Forms;
 
 namespace UserDashboardApp
 {
@@ -68,15 +69,16 @@ namespace UserDashboardApp
         // View Results Button Click Event
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("View Results button clicked!");
-            // Add code to navigate to the results page or display results.
+            ElectionResultsForm electionResults = new ElectionResultsForm();
+            electionResults.Show();
+            this.Hide();
+
         }
 
         // Logout Button Click Event
         private void button2_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Logout button clicked!");
-            // Add code to navigate to the login page or close the form.
         }
     }
 }

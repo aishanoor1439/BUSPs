@@ -46,8 +46,8 @@ namespace BUSPs.Forms
                             else if (role == "Student")
                             {
                                 MessageBox.Show("Welcome Student!");
-                                ElectionsPage electionsPage = new ElectionsPage();
-                                electionsPage.Show();
+                                UserDashboardForm userDashboard = new UserDashboardForm();
+                                userDashboard.Show();
                                 this.Hide();
                             }
                         }
