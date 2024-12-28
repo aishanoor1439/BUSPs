@@ -59,6 +59,12 @@
     <Compile Include="Forms\AdminDashboard.Designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ElectionResultsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ElectionResultsForm.Designer.cs">
+      <DependentUpon>ElectionResultsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,10 +89,19 @@
     <Compile Include="Forms\UserDashboardForm.Designer.cs">
       <DependentUpon>UserDashboardForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\VotingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\VotingForm.Designer.cs">
+      <DependentUpon>VotingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ElectionResultsForm.resx">
+      <DependentUpon>ElectionResultsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -99,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserDashboardForm.resx">
       <DependentUpon>UserDashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VotingForm.resx">
+      <DependentUpon>VotingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -79,6 +79,11 @@ namespace UserDashboardApp
         private void button2_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Logout button clicked!");
+        }
+
+        private void UserDashboardForm_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
