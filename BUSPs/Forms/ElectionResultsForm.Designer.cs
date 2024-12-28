@@ -1,4 +1,4 @@
-﻿namespace YourNamespace
+﻿namespace BUSPS.Forms
 {
     partial class ElectionResultsForm
     {

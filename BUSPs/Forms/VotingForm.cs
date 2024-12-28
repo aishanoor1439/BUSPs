@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Data;
 using System.Data.SqlClient;
-using System.Reflection.Emit;
 using System.Windows.Forms;
-using UserDashboardApp;
+using BUSPs.Databases;
 
 namespace YourNamespace
 {
@@ -11,8 +9,7 @@ namespace YourNamespace
     {
         private string userId; // Logged-in User's ID
         private string electionId; // Selected Election's ID
-        private string connectionString = "Server=your_server_name;Database=your_database_name;User Id=your_user_id;Password=your_password;";
-
+        DatabaseHelper dbHelper = new DatabaseHelper();
         public VotingForm(string loggedInUserId, string selectedElectionId)
         {
          
@@ -28,9 +25,9 @@ namespace YourNamespace
 
         private void LoadElectionDetails()
         {
-            string query = "SELECT ElectionTitle, ElectionDate FROM Elections WHERE ElectionID = @ElectionID";
+            string query = "SELECT Name, StartDate, ID = @ElectionID";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = dbHelper.GetConnection())
             {
                 try
                 {
@@ -55,9 +52,9 @@ namespace YourNamespace
 
         private void LoadCandidates()
         {
-            string query = "SELECT CandidateID, CandidateName, PartyName FROM Candidates WHERE ElectionID = @ElectionID";
+            string query = "SELECT CandidateID, ElectionID, UserID FROM candidates WHERE ID = @ElectionID";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = dbHelper.GetConnection())
             {
                 try
                 {
@@ -82,7 +79,7 @@ namespace YourNamespace
             {
                 string selectedCandidateId = dataGridView1.SelectedRows[0].Cells["CandidateID"].Value.ToString();
 
-                string query = "INSERT INTO Votes (ElectionID, CandidateID, UserID) VALUES (@ElectionID, @CandidateID, @UserID)";
+                string query = "INSERT INTO vote (ElectionID, CandidateID, UserID) VALUES (@ElectionID, @CandidateID, @UserID)";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {

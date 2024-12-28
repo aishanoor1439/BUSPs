@@ -3,14 +3,14 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using UserDashboardApp;
+using BUSPs.Databases;
 
 
-namespace YourNamespace
+namespace BUSPS.Forms
 {
     public partial class ElectionResultsForm : Form
     {
-        private string connectionString = "Server=your_server_name;Database=your_database_name;User Id=your_user_id;Password=your_password;";
+        DatabaseHelper dbHelper = new DatabaseHelper();
 
         public ElectionResultsForm()
         {
@@ -24,9 +24,9 @@ namespace YourNamespace
 
         private void LoadElections()
         {
-            string query = "SELECT ElectionID, ElectionTitle FROM Elections";
+            string query = "SELECT ID, Name FROM election";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = dbHelper.GetConnection())
             {
                 try
                 {
@@ -54,18 +54,9 @@ namespace YourNamespace
 
         private void LoadElectionResults(string electionId)
         {
-            string query = @"
-                SELECT 
-                    c.CandidateName, 
-                    c.PartyName, 
-                    COUNT(v.VoteID) AS VoteCount
-                FROM Votes v
-                INNER JOIN Candidates c ON v.CandidateID = c.CandidateID
-                WHERE v.ElectionID = @ElectionID
-                GROUP BY c.CandidateName, c.PartyName
-                ORDER BY VoteCount DESC";
+            string query = @"";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = dbHelper.GetConnection())
             {
                 try
                 {
