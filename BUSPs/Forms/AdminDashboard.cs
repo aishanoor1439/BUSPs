@@ -2,6 +2,7 @@
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using BUSPs.Databases;
+using BUSPS.Forms;
 
 namespace BUSPs.Forms
 {
@@ -28,6 +29,13 @@ namespace BUSPs.Forms
         {
             ElectionSchedulingForm electionForm = new ElectionSchedulingForm();
             electionForm.Show();
+            this.Hide();
+        }
+
+        private void btn3_Click(object sender, EventArgs e)
+        {
+            ElectionResultsForm resultsForm = new ElectionResultsForm();
+            resultsForm.Show();
             this.Hide();
         }
 

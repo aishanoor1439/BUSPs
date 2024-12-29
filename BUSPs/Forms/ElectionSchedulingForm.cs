@@ -79,7 +79,7 @@ namespace BUSPs.Forms
                         adapter.Fill(dt);
 
                         // Bind data to DataGridView
-                        dataGridView1.DataSource = dt;
+                        dataGridViewElections.DataSource = dt;
                     }
                 }
             }

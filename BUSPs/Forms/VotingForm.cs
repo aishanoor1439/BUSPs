@@ -2,17 +2,19 @@
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using BUSPs.Databases;
+using UserDashboardApp;
 
-namespace YourNamespace
+namespace BUSPs.Forms
 {
     public partial class VotingForm : Form
     {
+        DatabaseHelper dbHelper = new DatabaseHelper();
         private string userId; // Logged-in User's ID
         private string electionId; // Selected Election's ID
-        DatabaseHelper dbHelper = new DatabaseHelper();
+
         public VotingForm(string loggedInUserId, string selectedElectionId)
         {
-         
+            InitializeComponent();
             userId = loggedInUserId; // Pass the logged-in user's ID
             electionId = selectedElectionId; // Pass the selected election's ID
         }
@@ -25,7 +27,7 @@ namespace YourNamespace
 
         private void LoadElectionDetails()
         {
-            string query = "SELECT Name, StartDate, ID = @ElectionID";
+            string query = "SELECT Name, StartDate FROM election WHERE ID = @ElectionID";
 
             using (SqlConnection connection = dbHelper.GetConnection())
             {
@@ -52,9 +54,19 @@ namespace YourNamespace
 
         private void LoadCandidates()
         {
-            string query = "SELECT CandidateID, ElectionID, UserID FROM candidates WHERE ID = @ElectionID";
+            string query = @"
+    SELECT 
+        c.CandidateID, 
+        u.Name AS CandidateName 
+    FROM 
+        Candidates c
+    INNER JOIN 
+        Users u ON c.UserID = u.UserID
+    WHERE 
+        c.ElectionID = @ElectionID";
 
-            using (SqlConnection connection = dbHelper.GetConnection())
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
                 {

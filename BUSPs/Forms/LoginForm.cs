@@ -2,6 +2,7 @@
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using BUSPs.Databases;
+using UserDashboardApp;
 
 namespace BUSPs.Forms
 {
@@ -23,7 +24,7 @@ namespace BUSPs.Forms
             {
                 try
                 {
-                    connection.Open(); 
+                    connection.Open();
 
                     string query = $"SELECT Role FROM user WHERE Name = '{username}' AND Password = '{password}'";
 
@@ -46,8 +47,8 @@ namespace BUSPs.Forms
                             else if (role == "Student")
                             {
                                 MessageBox.Show("Welcome Student!");
-                                UserDashboardForm userDashboard = new UserDashboardForm();
-                                userDashboard.Show();
+                                UserDashboardForm electionsPage = new UserDashboardForm();
+                                electionsPage.Show();
                                 this.Hide();
                             }
                         }
