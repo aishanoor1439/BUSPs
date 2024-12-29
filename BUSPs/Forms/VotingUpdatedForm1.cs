@@ -1,18 +1,20 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
+using System.Reflection.Emit;
 using System.Windows.Forms;
 using BUSPs.Databases;
 using UserDashboardApp;
 
 namespace BUSPs.Forms
 {
-    public partial class VotingForm : Form
+    public partial class VotingUpdatedForm1 : Form
     {
         DatabaseHelper dbHelper = new DatabaseHelper();
         private string userId; // Logged-in User's ID
         private string electionId; // Selected Election's ID
 
-        public VotingForm(string loggedInUserId, string selectedElectionId)
+        public VotingUpdatedForm1(string loggedInUserId, string selectedElectionId)
         {
             InitializeComponent();
             userId = loggedInUserId; // Pass the logged-in user's ID
@@ -66,7 +68,7 @@ namespace BUSPs.Forms
         c.ElectionID = @ElectionID";
 
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = dbHelper.GetConnection())
             {
                 try
                 {
@@ -76,7 +78,7 @@ namespace BUSPs.Forms
 
                     DataTable table = new DataTable();
                     adapter.Fill(table);
-                    dataGridView1.DataSource = table;
+                    dataGridView1_CellContentClick.DataSource = table;
                 }
                 catch (Exception ex)
                 {
@@ -87,13 +89,13 @@ namespace BUSPs.Forms
 
         private void button1_Click(object sender, EventArgs e) // Submit Vote Button
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (dataGridView1_CellContentClick.SelectedRows.Count > 0)
             {
-                string selectedCandidateId = dataGridView1.SelectedRows[0].Cells["CandidateID"].Value.ToString();
+                string selectedCandidateId = dataGridView1_CellContentClick.SelectedRows[0].Cells["CandidateID"].Value.ToString();
 
                 string query = "INSERT INTO vote (ElectionID, CandidateID, UserID) VALUES (@ElectionID, @CandidateID, @UserID)";
 
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlConnection connection = dbHelper.GetConnection())
                 {
                     try
                     {
@@ -127,11 +129,13 @@ namespace BUSPs.Forms
             dashboard.Show();
             this.Close();
         }
+
+        private void buttonVoteNow_Click(object sender, EventArgs e)
+        {
+            string selectedElectionId = DataGridViewElections.SelectedRows[0].Cells["ElectionID"].Value.ToString();
+            VotingUpdatedForm1 votingForm = new VotingUpdatedForm1(userId, selectedElectionId);
+            votingForm.Show();
+            this.Hide();
+        }
     }
-    private void buttonVoteNow_Click(object sender, EventArgs e)
-    {
-        string selectedElectionId = dataGridViewElections.SelectedRows[0].Cells["ElectionID"].Value.ToString();
-        VotingForm votingForm = new VotingForm(loggedInUserId, selectedElectionId);
-        votingForm.Show();
-        this.Hide();
-    }
+}
