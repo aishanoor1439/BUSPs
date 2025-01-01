@@ -3,82 +3,82 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace UserDashboardApp
+namespace BUSPs.Forms
 {
     public partial class UserDashboardForm : Form
     {
-        public UserDashboardForm()
-        {
-            InitializeComponent();
-        }
+        private DataGridView dataGridView1;
+        private DataGridView dataGridView2;
 
-        // Form Load Event
+        // Event triggered when the form is loaded
         private void UserDashboardForm_Load(object sender, EventArgs e)
         {
             LoadSocieties();
             LoadElections();
         }
 
-        // Load societies data into dataGridView1
+        // Method to load societies data into dataGridView1
         private void LoadSocieties()
         {
             string query = "SELECT ID AS 'ID', Name AS 'Name', Description AS 'Description' FROM society";
-            string connectionString = "your_connection_string_here";
+            string connectionString = "Server=localhost;Database=busps;Uid=root;Pwd=;";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                try
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection); 
                     DataTable table = new DataTable();
-                    adapter.Fill(table);
-                    dataGridView1.DataSource = table;
+                    adapter.Fill(table); // Fill the DataTable with query results
+
+                    dataGridView1.DataSource = table; // Bind data to dataGridView1
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error loading societies: " + ex.Message);
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading societies: " + ex.Message);
             }
         }
 
-        // Load elections data into dataGridView2
+        // Method to load elections data into dataGridView2
         private void LoadElections()
         {
             string query = "SELECT ElectionID AS 'ID', ElectionDate AS 'Date', Status AS 'Status' FROM elections";
-            string connectionString = "your_connection_string_here";
+            string connectionString = "Server=localhost;Database=busps;Uid=root;Pwd=;";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                try
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection); // Fetch data using SqlDataAdapter
                     DataTable table = new DataTable();
-                    adapter.Fill(table);
-                    dataGridView2.DataSource = table;
+                    adapter.Fill(table); // Fill the DataTable with query results
+
+                    dataGridView2.DataSource = table; // Bind data to dataGridView2
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error loading elections: " + ex.Message);
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading elections: " + ex.Message);
             }
         }
 
-        // View Results Button Click Event
+        // Event handler for the "View Results" button
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("View Results button clicked!");
-            // Add code to navigate to the results page or display results.
+            ElectionResultsForm resultsForm = new ElectionResultsForm();
+            resultsForm.Show();
+            this.Hide();
         }
 
-        // Logout Button Click Event
+        // Event handler for the "Logout" button
         private void button2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Logout button clicked!");
-            // Add code to navigate to the login page or close the form.
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Hide();
         }
-
-
     }
 }

@@ -1,17 +1,12 @@
 ﻿using System;
 using System.Data;
-using System.Data.SqlClient;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using BUSPs.Databases;
-
+using MySql.Data.MySqlClient;
 
 namespace BUSPS.Forms
 {
     public partial class ElectionResultsForm : Form
     {
-        DatabaseHelper dbHelper = new DatabaseHelper();
-
         public ElectionResultsForm()
         {
             InitializeComponent();
@@ -24,14 +19,15 @@ namespace BUSPS.Forms
 
         private void LoadElections()
         {
-            string query = "SELECT ID, Name FROM election";
+            string query = "SELECT ID AS ElectionID, Name AS ElectionTitle FROM election";
+            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["MySqlConnectionString"].ConnectionString;
 
-            using (SqlConnection connection = dbHelper.GetConnection())
+            try
             {
-                try
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
                     connection.Open();
-                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
                     DataTable table = new DataTable();
                     adapter.Fill(table);
 
@@ -39,29 +35,33 @@ namespace BUSPS.Forms
                     comboBox1.DisplayMember = "ElectionTitle";
                     comboBox1.ValueMember = "ElectionID";
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error loading elections: " + ex.Message);
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading elections: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedElectionId = comboBox1.SelectedValue.ToString();
-            LoadElectionResults(selectedElectionId);
+            if (comboBox1.SelectedValue != null)
+            {
+                string selectedElectionId = comboBox1.SelectedValue.ToString();
+                LoadElectionResults(selectedElectionId);
+            }
         }
 
         private void LoadElectionResults(string electionId)
         {
-            string query = @"";
+            string query = "SELECT CandidateName, Votes FROM election_results WHERE ElectionID = @ElectionID";
+            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["MySqlConnectionString"].ConnectionString;
 
-            using (SqlConnection connection = dbHelper.GetConnection())
+            try
             {
-                try
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
                     connection.Open();
-                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
                     adapter.SelectCommand.Parameters.AddWithValue("@ElectionID", electionId);
 
                     DataTable table = new DataTable();
@@ -69,23 +69,18 @@ namespace BUSPS.Forms
 
                     dataGridView1.DataSource = table;
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error loading election results: " + ex.Message);
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading election results: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void button1_Click(object sender, EventArgs e) // Back Button
+        private void button1_Click(object sender, EventArgs e)
         {
             UserDashboardForm dashboard = new UserDashboardForm();
             dashboard.Show();
             this.Close();
         }
-        {
-    ElectionResultsForm resultsForm = new ElectionResultsForm();
-        resultsForm.Show();
-    this.Hide();
     }
-}
 }

@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Data.SqlClient;
 using System.Windows.Forms;
-using BUSPs.Databases;
-using BUSPS.Forms;
 
 namespace BUSPs.Forms
 {
@@ -13,11 +10,7 @@ namespace BUSPs.Forms
             InitializeComponent();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+        // Button to open the Society Management Form
         private void btn1_Click(object sender, EventArgs e)
         {
             SocietyManagementForm societyForm = new SocietyManagementForm();
@@ -25,6 +18,7 @@ namespace BUSPs.Forms
             this.Hide();
         }
 
+        // Button to open the Election Scheduling Form
         private void btn2_Click(object sender, EventArgs e)
         {
             ElectionSchedulingForm electionForm = new ElectionSchedulingForm();
@@ -32,12 +26,12 @@ namespace BUSPs.Forms
             this.Hide();
         }
 
+        // Button to open the Election Results Form
         private void btn3_Click(object sender, EventArgs e)
         {
             ElectionResultsForm resultsForm = new ElectionResultsForm();
             resultsForm.Show();
             this.Hide();
         }
-
     }
 }

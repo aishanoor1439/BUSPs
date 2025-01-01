@@ -8,13 +8,5 @@ C:\Users\FC Technologies\source\repos\BUSPs\BUSPs\obj\Debug\BUSPs.Properties.Res
 C:\Users\FC Technologies\source\repos\BUSPs\BUSPs\obj\Debug\BUSPs.csproj.GenerateResource.cache
 C:\Users\FC Technologies\source\repos\BUSPs\BUSPs\obj\Debug\BUSPs.csproj.CoreCompileInputs.cache
 C:\Users\ABC\source\repos\BUSPs\BUSPs\obj\Debug\BUSPs.csproj.AssemblyReference.cache
-C:\Users\ABC\source\repos\BUSPs\BUSPs\obj\Debug\BUSPs.Forms.AdminDashboard.resources
-C:\Users\ABC\source\repos\BUSPs\BUSPs\obj\Debug\BUSPS.Forms.ElectionResultsForm.resources
-C:\Users\ABC\source\repos\BUSPs\BUSPs\obj\Debug\BUSPs.Forms.LoginForm.resources
-C:\Users\ABC\source\repos\BUSPs\BUSPs\obj\Debug\BUSPs.Forms.ElectionSchedulingForm.resources
-C:\Users\ABC\source\repos\BUSPs\BUSPs\obj\Debug\BUSPs.Forms.SocietyManagementForm.resources
-C:\Users\ABC\source\repos\BUSPs\BUSPs\obj\Debug\UserDashboardApp.UserDashboardForm.resources
-C:\Users\ABC\source\repos\BUSPs\BUSPs\obj\Debug\BUSPs.Forms.VotingUpdatedForm1.resources
-C:\Users\ABC\source\repos\BUSPs\BUSPs\obj\Debug\BUSPs.Properties.Resources.resources
-C:\Users\ABC\source\repos\BUSPs\BUSPs\obj\Debug\BUSPs.csproj.GenerateResource.cache
-C:\Users\ABC\source\repos\BUSPs\BUSPs\obj\Debug\BUSPs.csproj.CoreCompileInputs.cache
+C:\Users\ABC\source\repos\BUSPs\BUSPs\obj\Debug\BUSPs.csproj.SuggestedBindingRedirects.cache
+C:\Users\ABC\source\repos\BUSPs\BUSPs\obj\Debug\BUSPs.exe.config

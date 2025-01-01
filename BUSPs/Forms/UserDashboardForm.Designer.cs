@@ -2,7 +2,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace UserDashboardApp
+namespace UserDashboardForm
 {
     partial class UserDashboardForm
     {
@@ -246,7 +246,7 @@ namespace UserDashboardApp
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserDashboardForm";
-            this.Text = "UserDashboardForm";
+            this.Text = "User Dashboard";
             this.Load += new System.EventHandler(this.UserDashboardForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

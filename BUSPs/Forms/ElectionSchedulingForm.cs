@@ -2,15 +2,11 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using BUSPs.Databases;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BUSPs.Forms
 {
     public partial class ElectionSchedulingForm : Form
     {
-        DatabaseHelper dbHelper = new DatabaseHelper();
-
         public ElectionSchedulingForm()
         {
             InitializeComponent();
@@ -35,10 +31,11 @@ namespace BUSPs.Forms
                 return;
             }
 
-            // Saving to database
+            // Saving to the database
             try
             {
-                using (SqlConnection connection = dbHelper.GetConnection())
+                string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["MySqlConnectionString"].ConnectionString;
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
                     string query = "INSERT INTO election (Name, StartDate, EndDate) VALUES (@name, @startDate, @endDate)";
@@ -69,7 +66,8 @@ namespace BUSPs.Forms
         {
             try
             {
-                using (SqlConnection connection = dbHelper.GetConnection())
+                string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["MySqlConnectionString"].ConnectionString;
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
                     string query = "SELECT ID AS 'ID', Name AS 'Name', StartDate AS 'Start Date', EndDate AS 'End Date' FROM election";

@@ -2,25 +2,24 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using BUSPs.Databases;
 
 namespace BUSPs.Forms
 {
     public partial class SocietyManagementForm : Form
     {
-        DatabaseHelper dbHelper = new DatabaseHelper();
-
         public SocietyManagementForm()
         {
             InitializeComponent();
             LoadSocieties();
         }
 
+        // Load Societies
         private void LoadSocieties()
         {
             try
             {
-                using (SqlConnection connection = dbHelper.GetConnection())
+                string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["MySqlConnectionString"].ConnectionString;
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
                     string query = "SELECT ID AS 'ID', Name AS 'Name', Description AS 'Description' FROM society";
@@ -53,7 +52,8 @@ namespace BUSPs.Forms
 
             try
             {
-                using (SqlConnection connection = dbHelper.GetConnection())
+                string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["MySqlConnectionString"].ConnectionString;
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
                     string query = "INSERT INTO society (Name, Description) VALUES (@name, @description)";
@@ -97,7 +97,8 @@ namespace BUSPs.Forms
 
             try
             {
-                using (SqlConnection connection = dbHelper.GetConnection())
+                string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["MySqlConnectionString"].ConnectionString;
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
                     string query = "UPDATE society SET Name = @name, Description = @description WHERE ID = @id";
@@ -134,7 +135,8 @@ namespace BUSPs.Forms
 
             try
             {
-                using (SqlConnection connection = dbHelper.GetConnection())
+                string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["MySqlConnectionString"].ConnectionString;
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
                     string query = "DELETE FROM society WHERE ID = @id";

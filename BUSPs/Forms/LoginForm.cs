@@ -1,15 +1,12 @@
-﻿using System;
-using System.Data.SqlClient;
+﻿using MySql.Data.MySqlClient;
+using System;
+using System.Configuration;
 using System.Windows.Forms;
-using BUSPs.Databases;
-using UserDashboardApp;
 
 namespace BUSPs.Forms
 {
     public partial class LoginForm : Form
     {
-        DatabaseHelper dbHelper = new DatabaseHelper();
-
         public LoginForm()
         {
             InitializeComponent();
@@ -20,7 +17,11 @@ namespace BUSPs.Forms
             string username = textBox1.Text;
             string password = textBox2.Text;
 
-            using (SqlConnection connection = dbHelper.GetConnection())
+            // Retrieving connection string from App.config
+            string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnectionString"].ConnectionString;
+
+            // Using the connection string to establish a connection
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 try
                 {
@@ -28,9 +29,9 @@ namespace BUSPs.Forms
 
                     string query = $"SELECT Role FROM user WHERE Name = '{username}' AND Password = '{password}'";
 
-                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    using (MySqlCommand cmd = new MySqlCommand(query, connection))
                     {
-                        // Execute the query and fetch the result
+                        // Executing the query and fetch the result
                         object result = cmd.ExecuteScalar();
 
                         if (result != null)
@@ -47,8 +48,8 @@ namespace BUSPs.Forms
                             else if (role == "Student")
                             {
                                 MessageBox.Show("Welcome Student!");
-                                UserDashboardForm electionsPage = new UserDashboardForm();
-                                electionsPage.Show();
+                                UserDashboardForm userDashboard = new UserDashboardForm();
+                                userDashboard.Show();
                                 this.Hide();
                             }
                         }
