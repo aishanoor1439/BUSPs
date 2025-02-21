@@ -1,6 +1,6 @@
-﻿namespace YourNamespace
+﻿namespace BUSPs.Forms
 {
-    partial class VotingForm
+    partial class ElectionResultsForm
     {
         /// <summary>
         /// Required designer variable.
